@@ -1,18 +1,9 @@
-﻿ Random random = new();
-int daysUntilExpiration = random.Next(12);
-int discountPercentage;
+﻿// Recommended expression 
+// string[] fraudulentOrderIDs = {"A123", "B456", "C789"};
 
-if(daysUntilExpiration <= 10) {
-    Console.WriteLine("Your subscription will expire soon. Renew now!");
-    discountPercentage = 10;
-}
-else if(daysUntilExpiration <= 5) {
-    Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days.");
-    Console.WriteLine("Renew now and save 10 %!");
-}
-else if(daysUntilExpiration == 1) {
-    Console.WriteLine("Your subscription expires within a day!");
-}
-else if(daysUntilExpiration == 0) {
-    Console.WriteLine("Your subscription has expired.");
+
+string[] names = ["Nnamdi", "Buchi", "Jibola"];
+
+foreach ( string name in names) {
+Console.WriteLine(name);
 }
