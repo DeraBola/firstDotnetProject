@@ -2,8 +2,11 @@
 // string[] fraudulentOrderIDs = {"A123", "B456", "C789"};
 
 
-string[] names = ["Nnamdi", "Buchi", "Jibola"];
+int[] inventory = { 200, 450, 700, 175, 250 };
+int sum = 0;
 
-foreach ( string name in names) {
-Console.WriteLine(name);
+foreach (int items in inventory)
+{
+sum += items;
 }
+Console.WriteLine($"we have {sum} items in the inventory");
