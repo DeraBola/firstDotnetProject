@@ -1,13 +1,16 @@
-﻿string permission = "Admin|Manager";
-int level = 55;
+﻿int hero = 10;
+int enemy = 10;
+Random punches = new();
 
-if (permission.Contains("Admin") & level > 55){
-Console.WriteLine("Welcome, Super Admin user.");
-}else {
-    Console.WriteLine("Welcome, Admin user.");
-}
-if (permission.Contains("Manager") & level >= 20){
-Console.WriteLine("Contact an Admin for access.");
-}else {
-    Console.WriteLine("You do not have sufficient privileges.");
-}
+do
+{
+   int heroPunches = punches.Next(1, 11);
+    enemy -= heroPunches;
+    Console.WriteLine($"Monster was damaged and lost {heroPunches} health and now has {enemy} health.");
+
+    int enemyPunches = punches.Next(1, 11);
+    hero -= enemyPunches;
+    Console.WriteLine($"Hero was damaged and lost {enemyPunches} health and now has {hero} health.");
+} while (hero > 0 && enemy > 0);
+
+Console.WriteLine(hero > enemy ? "Hero wins!" : "Monster wins!");
