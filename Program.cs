@@ -1,7 +1,13 @@
-﻿Random coinFlip = new();
+﻿string permission = "Admin|Manager";
+int level = 55;
 
-int headTail = coinFlip.Next(2);
-
-string coinResult = headTail == 0 ? "heads" : "tails";
-
-Console.WriteLine(coinResult);
+if (permission.Contains("Admin") & level > 55){
+Console.WriteLine("Welcome, Super Admin user.");
+}else {
+    Console.WriteLine("Welcome, Admin user.");
+}
+if (permission.Contains("Manager") & level >= 20){
+Console.WriteLine("Contact an Admin for access.");
+}else {
+    Console.WriteLine("You do not have sufficient privileges.");
+}
