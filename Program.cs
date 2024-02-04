@@ -1,16 +1,29 @@
-﻿int hero = 10;
-int enemy = 10;
-Random punches = new();
+﻿string? readResult;
+string stringValue = "";
+int numericValue = 0;
+bool validNumber = false;
+
+Console.WriteLine("Enter a number from 5 to 10");
 
 do
 {
-   int heroPunches = punches.Next(1, 11);
-    enemy -= heroPunches;
-    Console.WriteLine($"Monster was damaged and lost {heroPunches} health and now has {enemy} health.");
+    readResult = Console.ReadLine();
 
-    int enemyPunches = punches.Next(1, 11);
-    hero -= enemyPunches;
-    Console.WriteLine($"Hero was damaged and lost {enemyPunches} health and now has {hero} health.");
-} while (hero > 0 && enemy > 0);
+    if (readResult != null)
+    {
+        stringValue = readResult;
+    }
+    validNumber = int.TryParse(stringValue, out numericValue);
+    if (validNumber == true)
+    {
+        if (numericValue <= 5 || numericValue >= 10)
+        {
+            validNumber = false;
+            Console.WriteLine($"You entered {numericValue}. Please enter a number between 5 and 10.");
+        }else 
+    {
+        Console.WriteLine("Sorry, you entered an invalid number, please try again");
+    }
+    }
 
-Console.WriteLine(hero > enemy ? "Hero wins!" : "Monster wins!");
+} while (validNumber == false);
