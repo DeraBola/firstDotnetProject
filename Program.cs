@@ -1,24 +1,14 @@
-﻿string? readResult;
-string roleName = "";
-bool validEntry = false;
-
-do
+﻿switch (fruit)
 {
+    case "apple":
+        Console.WriteLine($"App will display information for apple.")
+    break;
 
-    Console.WriteLine("Enter your role name (Administrator, Manager, or User)");
-    readResult = Console.ReadLine();
+    case "banana":
+        Console.WriteLine($"App will display information for banana.");
+        break;
 
-    if (readResult != null)
-    {
-        roleName = readResult.Trim();
-    }
-    if (roleName.Equals("administrator") || roleName.Equals("manager") || roleName.Equals("user"))
-    {
-        validEntry = true;
-    }
-      else
-    {
-        Console.Write($"The role name that you entered, \"{roleName}\" is not valid. ");
-    }
-
-} while (validEntry == false);
+    case "cherry":
+        Console.WriteLine($"App will display information for cherry.");
+        break;
+}
