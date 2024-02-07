@@ -1,14 +1,23 @@
-﻿switch (fruit)
-{
-    case "apple":
-        Console.WriteLine($"App will display information for apple.")
+﻿int employeeLevel = 200;
+string employeeName = "John Smith";
+string title = "";
+
+switch (employeeLevel){
+    case 100: 
+    title = "Junior Associate";
     break;
 
-    case "banana":
-        Console.WriteLine($"App will display information for banana.");
-        break;
+    case 200:
+    title = "Senior Associate";
+    break;
 
-    case "cherry":
-        Console.WriteLine($"App will display information for cherry.");
-        break;
+    case 300:
+    title = "Manager";
+    break;
+
+    default:
+    title = "Associate";
+    break;
 }
+
+Console.WriteLine($"{employeeName}, {title}");
