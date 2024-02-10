@@ -1,4 +1,4 @@
-﻿int first = 2;
+﻿string first = "2";
 string second = "4";
-string result = first + second;
+int result = int.Parse(first) +int.Parse(second);
 Console.WriteLine(result);
