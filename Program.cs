@@ -1,19 +1,17 @@
-﻿int value1 = 12;
-decimal value2 = 6.2m;
-float value3 = 4.3f;
+﻿string pangram = "The quick brown fox jumps over the lazy dog";
+char[] valueArray = pangram.ToCharArray();
+Array.Reverse(valueArray);
+string result = new(valueArray);
 
-int result1 = value1 / (int) value2;
+string[] message = result.Split();
 
-decimal result2 = value2 / (decimal) value3;
+// Console.WriteLine(message);
 
-float result3 = value3 / value1;
+// foreach(string items in message){
+//     Console.WriteLine(items);
+// }
 
-// Your code here to set result1
-// Hint: You need to round the result to nearest integer (don't just truncate)
-Console.WriteLine($"Divide value1 by value2, display the result as an int: {result1}");
-
-// Your code here to set result2
-Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
-
-// Your code here to set result3
-Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}");
+for(int i = message.Length -1; i >= 0; i--){
+    // Console.WriteLine(message[i]);
+    Console.Write(message[i] + " ");
+}
