@@ -1,5 +1,16 @@
-﻿int value = (int)1.5m; // casting truncates
-Console.WriteLine(value);
+﻿string[] values = ["12.3", "45", "ABC", "11", "DEF"];
+decimal total = 0m;
+string message = "";
 
-int value2 = Convert.ToInt32(1.5m); // converting rounds up
-Console.WriteLine(value2);
+foreach(var value in values ){
+    Console.WriteLine(value);
+    // stores the TryParse "out" value
+    if (decimal.TryParse(value, out decimal number))
+    {
+        total += number;
+    }else{
+        message += value;
+    }
+}
+Console.WriteLine($"Message: {message}");
+Console.WriteLine($"Total: {total}");
