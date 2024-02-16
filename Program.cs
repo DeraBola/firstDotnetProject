@@ -1,15 +1,13 @@
-﻿string message = "(What if) there are (more than) one (set of parentheses)?";
-while (true)
+﻿int[] a = [1, 2, 3, 4, 5];
+
+Console.WriteLine("Contents of Array:");
+PrintArray();
+
+void PrintArray()
 {
-    int openingPosition = message.IndexOf('(');
-    if (openingPosition == -1) break;
-
-    openingPosition += 1;
-    int closingPosition = message.IndexOf(')');
-    int length = closingPosition - openingPosition;
-    Console.WriteLine(message.Substring(openingPosition, length));
-
-    // Note the overload of the Substring to return only the remaining 
-    // unprocessed message:
-    message = message.Substring(closingPosition + 1);
+    foreach (int x in a)
+    {
+        Console.Write($"{x} ");
+    }
+    Console.WriteLine();
 }
